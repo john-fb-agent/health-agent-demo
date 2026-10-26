@@ -12,6 +12,15 @@
 | **語言** | 繁體中文 |
 | **互動頁** | [陳大文 · 健康指標 Demo](https://cursor.com/canvas/store-f80816da-fd42-4840-afa3-db37b31635ae/3c9ad5ea-c586-4b1d-b7f7-060bbd20364a) |
 
+
+## 統計圖 Page（Canvas）
+
+- **線上頁面**：[陳大文 · 健康指標 Demo](https://cursor.com/canvas/store-f80816da-fd42-4840-afa3-db37b31635ae/3c9ad5ea-c586-4b1d-b7f7-060bbd20364a)（LDL／總膽固醇／維生素 D／TSH／血糖折線、最新值表、歷史 flag）
+- **倉庫原始碼**：[`dashboard.canvas.tsx`](./dashboard.canvas.tsx)（`grok/canvas` Page 模組；與線上頁同源匯出）
+- **Canvas id**：`3c9ad5ea-c586-4b1d-b7f7-060bbd20364a`
+
+本檔僅供版本控管與演示說明；實際渲染仍以 Cursor Canvas 為準。
+
 ## AI 管線
 
 1. **Intake** — 上傳或貼上報告（PDF、截圖、數字）
@@ -26,12 +35,13 @@
 
 ```
 health-demo/
-├── README.md            # 本文件（說明＋演示講稿）
-├── HEALTHM.md           # 健康總覽（結論、清單、留意項）
-├── metrics.csv          # 指標主檔（UTF-8）
-├── metrics_excel.csv    # 同上，UTF-8 BOM（Excel 可直接開）
-├── notes/               # 代表性解讀筆記
-└── reports/             # 原始 PDF／影像刻意省略（僅 .gitkeep）
+├── README.md              # 本文件（說明＋演示講稿）
+├── HEALTHM.md             # 健康總覽（結論、清單、留意項）
+├── dashboard.canvas.tsx   # 趨勢圖 Page 原始碼（Cursor Canvas）
+├── metrics.csv            # 指標主檔（UTF-8）
+├── metrics_excel.csv      # 同上，UTF-8 BOM（Excel 可直接開）
+├── notes/                 # 代表性解讀筆記
+└── reports/               # 原始 PDF／影像刻意省略（僅 .gitkeep）
 ```
 
 ### metrics 欄位
@@ -53,7 +63,7 @@ health-demo/
 
 檢查類型刻意多樣：年度體檢、代謝／血脂跟進、甲狀腺門診、腸胃門診生化、視力篩查、骨密度初評、維生素 D 複查等（虛構機構如青松體檢中心、綠洲健康中心、市立綜合醫院）。
 
-詳細結論與清單見 `HEALTHM.md`；圖表見上方 Canvas。
+詳細結論與清單見 `HEALTHM.md`；圖表見 [統計圖 Page](#統計圖-pagecanvas) 與 `dashboard.canvas.tsx`。
 
 ## 演示提示（約 2–3 分鐘）
 
