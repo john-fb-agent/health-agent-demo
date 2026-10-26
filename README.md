@@ -11,7 +11,16 @@
 | **涵蓋** | 2018-03 ～ 2026-09 · 約 12 次檢查類型 · 約 124 筆指標 |
 | **語言** | 繁體中文 |
 | **互動頁** | [陳大文 · 健康指標 Demo](https://cursor.com/canvas/store-f80816da-fd42-4840-afa3-db37b31635ae/3c9ad5ea-c586-4b1d-b7f7-060bbd20364a) |
+| **GitHub Pages** | [john-fb-agent.github.io/health-agent-demo](https://john-fb-agent.github.io/health-agent-demo/) |
 
+
+## GitHub Pages
+
+- **線上站**：[https://john-fb-agent.github.io/health-agent-demo/](https://john-fb-agent.github.io/health-agent-demo/)（Chart.js 靜態趨勢頁）
+- **來源**：`docs/`（`index.html` + `styles.css` + `app.js` + `metrics.csv`）
+- **部署**：`.github/workflows/pages.yml`（push `main` → upload-pages-artifact → deploy-pages）
+
+> 注意：此 repo 目前為 **private**。GitHub Free 帳號僅公開 repo 可用 Pages；Private Pages 需 GitHub Pro／Team／Enterprise，或把 repo 改為 public 後才會對外可見。
 
 ## 統計圖 Page（Canvas）
 
@@ -38,6 +47,12 @@ health-demo/
 ├── README.md              # 本文件（說明＋演示講稿）
 ├── HEALTHM.md             # 健康總覽（結論、清單、留意項）
 ├── dashboard.canvas.tsx   # 趨勢圖 Page 原始碼（Cursor Canvas）
+├── docs/                  # GitHub Pages 靜態站（Chart.js）
+│   ├── index.html
+│   ├── styles.css
+│   ├── app.js
+│   └── metrics.csv
+├── .github/workflows/pages.yml
 ├── metrics.csv            # 指標主檔（UTF-8）
 ├── metrics_excel.csv      # 同上，UTF-8 BOM（Excel 可直接開）
 ├── notes/                 # 代表性解讀筆記
@@ -68,7 +83,7 @@ health-demo/
 ## 演示提示（約 2–3 分鐘）
 
 1. 說明一句話目標與管線五步。
-2. 打開 Canvas，帶過「Vit D → 血脂 → TSH」三條已釐清鏈。
+2. 打開 GitHub Pages（或 Canvas），帶過「Vit D → 血脂 → TSH」三條已釐清鏈。
 3. 點開 `metrics.csv`／一則 `notes/`，展示三層歸檔。
 4. 強調邊界：不診斷、不開藥；最終判斷交給醫生。
 
