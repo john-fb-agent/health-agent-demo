@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>陳大文 · 健康指標 Demo</title>
+  <meta name="description" content="虛構去識別化 AI 體檢解讀演示：維生素 D、血脂、甲狀腺趨勢。非醫療診斷。" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="badge">AI 應用 Demo · 非診斷</p>
+      <h1>陳大文 · 健康指標 Demo</h1>
+      <p class="lead">把零散體檢報告變成可追蹤指標與趨勢。人物、機構、數值均為虛構演示資料。</p>
+      <dl class="meta">
+        <div><dt>姓名</dt><dd>陳大文（Chan Tai-man）</dd></div>
+        <div><dt>出生</dt><dd>1989-05-12</dd></div>
+        <div><dt>涵蓋</dt><dd>2018-03 ～ 2026-09 · 12 次檢查</dd></div>
+        <div><dt>更新</dt><dd>2026-10-26</dd></div>
+      </dl>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="callout success" aria-label="總結">
+      <strong>總結</strong>
+      <p>整體健康良好，目前無須治療或立即回診。本頁為 AI 應用演示，不可當作真實病歷或診斷依據。</p>
+    </section>
+
+    <section aria-labelledby="stories">
+      <h2 id="stories">關鍵敘事</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>維生素 D · 已釐清</h3>
+          <p>2024-01 為 18 ng/mL（偏低）；補充後 2024-08 升至 34，之後維持 36–38。</p>
+        </article>
+        <article class="card">
+          <h3>血脂 · 已回落</h3>
+          <p>2025 LDL 一度 3.48、TC 5.45（偏高）；飲食與有氧後 2026-09 LDL 3.05、TC 4.95 回落。</p>
+        </article>
+        <article class="card">
+          <h3>甲狀腺 · 一過性</h3>
+          <p>2022 TSH 4.85 輕度偏高；後續複查正常，TPO 抗體陰性。</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="highlights">
+      <h2 id="highlights">亮點數值</h2>
+      <div class="metrics" id="metrics-grid"></div>
+    </section>
+
+    <section aria-labelledby="charts">
+      <h2 id="charts">趨勢圖</h2>
+      <div class="chart-grid">
+        <figure class="chart-card">
+          <figcaption>LDL（mmol/L）· 參考上限 &lt;3.4</figcaption>
+          <canvas id="chart-ldl" height="220"></canvas>
+        </figure>
+        <figure class="chart-card">
+          <figcaption>總膽固醇（mmol/L）· 參考上限 &lt;5.2</figcaption>
+          <canvas id="chart-tc" height="220"></canvas>
+        </figure>
+        <figure class="chart-card">
+          <figcaption>25-OH 維生素 D（ng/mL）· 參考下限 ≥30</figcaption>
+          <canvas id="chart-vitd" height="220"></canvas>
+        </figure>
+        <figure class="chart-card">
+          <figcaption>TSH（mIU/L）· 參考上限 4.0</figcaption>
+          <canvas id="chart-tsh" height="220"></canvas>
+        </figure>
+        <figure class="chart-card">
+          <figcaption>空腹血糖（mmol/L）</figcaption>
+          <canvas id="chart-glu" height="220"></canvas>
+        </figure>
+      </div>
+    </section>
+
+    <section aria-labelledby="latest">
+      <h2 id="latest">最新數值（精選）</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>項目</th><th>數值</th><th>單位</th><th>日期</th><th>flag</th></tr>
+          </thead>
+          <tbody id="latest-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="flags">
+      <h2 id="flags">歷史 flag（僅 H／L）</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>日期</th><th>項目</th><th>數值</th><th>flag</th><th>說明</th></tr>
+          </thead>
+          <tbody id="flags-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="visits">
+      <h2 id="visits">檢查類型一覽</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>日期</th><th>類型</th><th>機構</th></tr>
+          </thead>
+          <tbody id="visits-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="pipeline">
+      <h2 id="pipeline">AI 管線</h2>
+      <ol class="steps">
+        <li><strong>上傳／貼上</strong> — PDF、照片、截圖或直接貼數字</li>
+        <li><strong>OCR／Vision</strong> — 掃描件或無文字 PDF 先轉圖再讀</li>
+        <li><strong>解讀</strong> — 對照參考範圍，說明是否需複查</li>
+        <li><strong>歸檔</strong> — metrics.csv、notes、HEALTHM 總覽</li>
+        <li><strong>趨勢頁</strong> — 折線圖、最新表、歷史 flag</li>
+      </ol>
+      <div class="callout info">
+        <strong>邊界</strong>
+        <p>不診斷、不開藥、不預約、不登入醫院網站；明顯異常只建議找醫生。最終判斷交給醫師。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>虛構 Demo · 資料見 <a href="metrics.csv">metrics.csv</a> · GitHub Pages 靜態站</p>
+      <p class="muted">本頁非醫療診斷，僅供 AI 應用演示。</p>
+    </div>
+  </footer>
+</body>
+</html>
