@@ -20,7 +20,16 @@
 - **來源**：`docs/`（`index.html` + `styles.css` + `app.js` + `metrics.csv`）
 - **部署**：`.github/workflows/pages.yml`（push `main` → upload-pages-artifact → deploy-pages）
 
-> 注意：此 repo 目前為 **private**。GitHub Free 帳號僅公開 repo 可用 Pages；Private Pages 需 GitHub Pro／Team／Enterprise，或把 repo 改為 public 後才會對外可見。
+> **目前狀態（2026-10-26）**：`docs/` 與 `.github/workflows/pages.yml` 已推上 `main`，但 Actions 部署失敗——`Create Pages site failed: Resource not accessible by integration`（workflow 無法代為第一次啟用 Pages）。
+>
+> **解鎖步驟（需帳號本人一次操作）**
+> 1. 打開 [Repo → Settings → Pages](https://github.com/john-fb-agent/health-agent-demo/settings/pages)
+> 2. Build and deployment → **Source** 選 **GitHub Actions**
+> 3. 再跑一次 workflow：Actions → Deploy GitHub Pages → Run workflow
+>
+> **Private 限制**：GitHub Free 僅 **public** repo 可用 Pages；private Pages 需 Pro／Team／Enterprise。若要對外 demo，把 repo 改為 public（或升級方案）後再啟用。
+>
+> 啟用成功後預期網址：https://john-fb-agent.github.io/health-agent-demo/
 
 ## 統計圖 Page（Canvas）
 
