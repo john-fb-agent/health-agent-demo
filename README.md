@@ -10,6 +10,9 @@
 | **出生** | 1989-05-12 |
 | **涵蓋** | 2018-03 ～ 2026-09 · 約 12 次檢查類型 · 約 124 筆指標 |
 | **語言** | 繁體中文 |
+| **Harness** | Grok Bot |
+| **Model** | Grok |
+| **製作日期** | 2026-10-26 |
 | **互動頁** | [陳大文 · 健康指標 Demo](https://cursor.com/canvas/store-f80816da-fd42-4840-afa3-db37b31635ae/3c9ad5ea-c586-4b1d-b7f7-060bbd20364a) |
 | **GitHub Pages** | [john-fb-agent.github.io/health-agent-demo](https://john-fb-agent.github.io/health-agent-demo/) |
 
@@ -20,16 +23,10 @@
 - **來源**：`docs/`（`index.html` + `styles.css` + `app.js` + `metrics.csv`）
 - **部署**：`.github/workflows/pages.yml`（push `main` → upload-pages-artifact → deploy-pages）
 
-> **目前狀態（2026-10-26）**：`docs/` 與 `.github/workflows/pages.yml` 已推上 `main`，但 Actions 部署失敗——`Create Pages site failed: Resource not accessible by integration`（workflow 無法代為第一次啟用 Pages）。
+> **目前狀態（2026-10-26）**：repo 已 **public**，Pages Source = GitHub Actions，站點已上線。
 >
-> **解鎖步驟（需帳號本人一次操作）**
-> 1. 打開 [Repo → Settings → Pages](https://github.com/john-fb-agent/health-agent-demo/settings/pages)
-> 2. Build and deployment → **Source** 選 **GitHub Actions**
-> 3. 再跑一次 workflow：Actions → Deploy GitHub Pages → Run workflow
->
-> **Private 限制**：GitHub Free 僅 **public** repo 可用 Pages；private Pages 需 Pro／Team／Enterprise。若要對外 demo，把 repo 改為 public（或升級方案）後再啟用。
->
-> 啟用成功後預期網址：https://john-fb-agent.github.io/health-agent-demo/
+> 線上站：https://john-fb-agent.github.io/health-agent-demo/
+
 
 ## 統計圖 Page（Canvas）
 
@@ -117,4 +114,4 @@ health-demo/
 
 ---
 
-*更新：2026-10-26 · 本地根目錄 `/workspace/health-demo/`*
+*Harness: Grok Bot · Model: Grok · 製作日期: 2026-10-26 · 本地根目錄 `/workspace/health-demo/`*
