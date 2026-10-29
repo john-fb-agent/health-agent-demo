@@ -11,7 +11,7 @@
 | **涵蓋** | 2018-03 ～ 2026-09 · 約 12 次檢查類型 · 約 124 筆指標 |
 | **語言** | 繁體中文 |
 | **Harness** | Grok Bot |
-| **Model** | Grok |
+| **Model** | Grok Bot |
 | **製作日期** | 2026-10-26 |
 | **互動頁** | [陳大文 · 健康指標 Demo](https://cursor.com/canvas/store-f80816da-fd42-4840-afa3-db37b31635ae/3c9ad5ea-c586-4b1d-b7f7-060bbd20364a) |
 | **GitHub Pages** | [john-fb-agent.github.io/health-agent-demo](https://john-fb-agent.github.io/health-agent-demo/) |
@@ -114,4 +114,4 @@ health-demo/
 
 ---
 
-*Harness: Grok Bot · Model: Grok · 製作日期: 2026-10-26 · 本地根目錄 `/workspace/health-demo/`*
+*Harness: Grok Bot · Model: Grok Bot · 製作日期: 2026-10-26 · 本地根目錄 `/workspace/health-demo/`*
